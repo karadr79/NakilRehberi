@@ -1831,7 +1831,7 @@ function applyTheme(t){if(t==="system")document.documentElement.removeAttribute(
 let theme="system";try{theme=localStorage.getItem("nakil-theme")||"system"}catch(e){}
 applyTheme(theme);
 $("#themeBtn").addEventListener("click",()=>{theme=THEMES[(THEMES.indexOf(theme)+1)%3];applyTheme(theme);try{localStorage.setItem("nakil-theme",theme)}catch(e){}});
-RTEU.init({key:"nakil",version:"1.1",date:"11.11.2026",tools:".sidefoot",view:"#view"});
+RTEU.init({key:"nakil",version:"1.1",date:"11.11.2026",tools:".sidefoot",view:"#view",rem:true,press:".mod,.hit,.toc button",cards:".calc"});
 /* Başlat */
 const h0=(location.hash||"").replace("#","");go(h0||"home",null,false);
 /* Çevrimdışı: GitHub Pages gibi bir sunucuda service worker kaydı; artifact çerçevesinde sessizce atlanır */
