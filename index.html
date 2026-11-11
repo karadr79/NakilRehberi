@@ -7,6 +7,7 @@
 <title>Nakil Rehberi</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="TND Transplantasyon Nefrolojisi Pratik Uygulama Önerileri (2026) temelli böbrek nakli rehberi ve hesaplayıcılar.">
+<meta name="author" content="Prof. Dr. Ekrem KARA">
 <meta name="theme-color" content="#2a1d3d">
 <link rel="manifest" href="manifest.json">
 
@@ -162,6 +163,7 @@ mark{background:var(--draft-soft);color:inherit;padding:0 2px;border-radius:2px}
 }
 @media (prefers-reduced-motion:reduce){.side{transition:none}}
 </style>
+<link rel="stylesheet" href="ortak.css">
 <!--suite-head--><link rel="stylesheet" href="fonts.css"><style id="suite">
 /* === RTEÜ Nefroloji uygulama ailesi (ortak) === */
 .suite{display:flex;align-items:center;gap:18px;background:#0E1F2E;color:#C9D6E2;
@@ -203,7 +205,7 @@ h1{letter-spacing:-.02em}
 </style>
 </head>
 <body>
-<!--suite-nav--><nav class="suite" aria-label="RTEÜ Nefroloji uygulamaları"><span class="suite-org">RTEÜ Nefroloji</span><ul class="suite-apps"><li><a href="https://karadr79.github.io/nefro-kons/" style="--suite-c:#A9BCD3"><span class="sl">Konsültasyon</span><span class="ss">Konsültasyon</span></a></li><li><a href="https://karadr79.github.io/NefroHesapAraclar/" style="--suite-c:#46BDD0"><span class="sl">Hesap araçları</span><span class="ss">Hesap</span></a></li><li><a href="https://karadr79.github.io/KBHRehberi/" style="--suite-c:#7FB0E0"><span class="sl">KBH Rehberi</span><span class="ss">KBH</span></a></li><li><a href="https://karadr79.github.io/NakilRehberi/" style="--suite-c:#C7A6E8" aria-current="page"><span class="sl">Nakil Rehberi</span><span class="ss">Nakil</span></a></li><li><a href="https://karadr79.github.io/KlinikBeslenme/" style="--suite-c:#5DBE8F"><span class="sl">Klinik beslenme</span><span class="ss">Beslenme</span></a></li></ul></nav><!--/suite-nav-->
+<!--suite-nav--><nav class="suite" aria-label="RTEÜ Nefroloji uygulamaları"><span class="suite-org">RTEÜ Nefroloji</span><ul class="suite-apps"><li><a href="https://karadr79.github.io/nefro-kons/" style="--suite-c:#A9BCD3"><span class="sl">Konsültasyon</span><span class="ss">Konsültasyon</span></a></li><li><a href="https://karadr79.github.io/NefroHesapAraclar/" style="--suite-c:#46BDD0"><span class="sl">Hesap araçları</span><span class="ss">Hesap</span></a></li><li><a href="https://karadr79.github.io/KBHRehberi/" style="--suite-c:#7FB0E0"><span class="sl">KBH Rehberi</span><span class="ss">KBH</span></a></li><li><a href="https://karadr79.github.io/NakilRehberi/" style="--suite-c:#C7A6E8" aria-current="page"><span class="sl">Nakil Rehberi</span><span class="ss">Nakil</span></a></li><li><a href="https://karadr79.github.io/KlinikBeslenme/" style="--suite-c:#5DBE8F"><span class="sl">Klinik beslenme</span><span class="ss">Beslenme</span></a></li><li><a href="https://karadr79.github.io/SemiyolojiRehberi/" style="--suite-c:#F2A93B"><span class="sl">Semiyoloji</span><span class="ss">Semiyoloji</span></a></li></ul></nav><!--/suite-nav-->
 
 
 <div class="top">
@@ -227,6 +229,7 @@ h1{letter-spacing:-.02em}
   <main id="main"><div class="wrap" id="view"></div></main>
 </div>
 
+<script src="ortak.js"></script>
 <script src="disaktar.js"></script>
 <script>
 /* ============================================================
@@ -508,7 +511,11 @@ const MODS_RAW=[
    ["Başarısız desensitizasyon","Bortezomib / daratumumab ± PF","Uzun ömürlü plazma hücresi deplesyonu"]
   ],"Bölüm 6, Tablo 5"],
   ["H","MFI ve cPRA'ya göre karar algoritması"],
-  ["T",["Durum","Önerilen"],[["DSA MFI 1.000–3.000 ve cPRA %80–95","Yüksek doz IVIG (2 g/kg) monoterapi veya IVIG + rituksimab"],["DSA MFI 3.000–8.000 ve cPRA >%95","PF + IVIG + rituksimab"],["DSA MFI >8.000 veya CDC-XM pozitif","PF + IVIG + rituksimab + ekulizumab veya imlifidaz (IdeS)"]]]
+  ["F",[
+   ["Yüksek duyarlanmış veya XM pozitif çift","Önce çapraz (eşleştirilmiş) nakil olanağı değerlendirilir."],
+   {q:"DSA MFI ve cPRA düzeyi?",o:[["MFI 1.000–3.000 ve cPRA %80–95","Yüksek doz IVIG (2 g/kg) monoterapi veya IVIG + rituksimab.",""],["MFI 3.000–8.000 ve cPRA >%95","PF + IVIG + rituksimab.",""],["MFI >8.000 veya CDC-XM pozitif","PF + IVIG + rituksimab + ekulizumab veya imlifidaz (IdeS).","stop"]]},
+   {q:"Cross-match negatifleşti mi?",o:[["Evet","Nakil; ATLG indüksiyonu, nakil sonrası +2, +3, +5. gün PF/IA + IVIG ve yakın DSA izlemi.","end"],["Hayır","Aynı protokol tekrarlanmaz. Çapraz/zincir nakil, kabul edilebilir uyumsuzluk programı veya kurtarma ajanları (bortezomib, daratumumab).","stop"]]}
+  ]]
  ]},
  {h:"Klasik kombine protokol",src:"b6",items:[
   ["T",["Zaman","Uygulama"],[
@@ -521,7 +528,15 @@ const MODS_RAW=[
   ],"Bölüm 6, Şekil 2"]
  ]},
  {h:"İmlifidaz (IdeS) protokolü",src:"b6",items:[
-  ["L",["Endikasyon (en az biri): cPRA >%98, CDC-XM pozitif, tek antijen pozitifliği (DSA MFI 1.000–10.000).","Nakilden 6–24 saat önce imlifidaz 0,25 mg/kg IV tek doz; 2, 4 ve 24. saatte CDC-XM tekrarlanır.","CDC-XM negatifse nakil yapılır; hâlâ pozitifse 2. doz 0,25 mg/kg, 2 saat sonra negatifse nakil.","Postoperatif 4. gün ATLG başlanır (7 gün, kümülatif 7–9 mg/kg).","+7. gün yüksek doz IVIG; +9. gün rituksimab 0,5 g veya 1 g tek doz.","DSA izlemi: +5, +7, +10, +14, +21. gün; +1, +3, +6, +9. ay; sonra yıllık. Protokol biyopsisi: erken dönem, 3. ay, 6. ay, 1. yıl."]],
+  ["F",[
+   ["Endikasyon (en az biri)","cPRA >%98; CDC-XM pozitif; tek antijen pozitifliği (DSA MFI 1.000–10.000)."],
+   ["Nakilden 6–24 saat önce","İmlifidaz 0,25 mg/kg IV tek doz. 2, 4 ve 24. saatte CDC-XM."],
+   {q:"CDC-XM negatif mi?",o:[["Evet","Nakil yapılır.","end"],["Hayır","2. doz 0,25 mg/kg; 2 saat sonra CDC-XM negatifse nakil.",""]]},
+   ["Postoperatif 4. gün","ATLG başlanır (7 gün, kümülatif 7–9 mg/kg)."],
+   ["+7. gün","Yüksek doz IVIG."],
+   ["+9. gün","Rituksimab 0,5 g veya 1 g tek doz."],
+   ["İzlem","DSA: +5, +7, +10, +14, +21. gün; +1, +3, +6, +9. ay; sonra yıllık. Protokol biyopsisi: erken dönem, 3. ay, 6. ay, 1. yıl.","end"]
+  ],"Bölüm 6, Şekil 1 (HIGHDES çalışması temelinde)"],
   ["T",["Özellik","İmlifidaz","Klasik PF + IVIG"],[["DSA azalma hızı","Saatler (<6 saat)","Günler–haftalar"],["IgG klirensi","IgG1–4 >%99 parçalanır","Seans başına %60–70"],["Kadavra naklinde","Yüksek uygulanabilirlik","Süre kısıtı nedeniyle sınırlı"],["Tekrarlanabilirlik","Anti-IdeS antikoru nedeniyle sınırlı","Yüksek"],["Onay","EMA koşullu onay (2020)","Off-label, yaygın"]],"Bölüm 6, Tablo 4"]
  ]},
  {h:"ABO uyumsuz nakil (EAU-ERA)",src:"b6",items:[
@@ -812,15 +827,14 @@ const MODS_RAW=[
   ["N","Klazakizumab faz 2'de histolojik düzelme sağlasa da faz 3 IMAGINE çalışması etkinlik yetersizliği nedeniyle erken sonlandırılmıştır."]
  ]},
  {h:"İTF ABMR yönetim şeması",src:"b11",items:[
-  ["T",["Adım","Uygulama"],[
-   ["1. Ön değerlendirme","Biyopside aktivite ve kronisite; ağır kronisitesi olan hasta tedavi edilmez"],
-   ["2. İdame","Takrolimus (C0 ≥6 ng/ml) + tam doz mikofenolat (MMF 2 × 1.000 mg veya MPS 2 × 720 mg) + prednizolon"],
-   ["3. Tedavi","Rituksimab 375 mg/m² tek doz (plazma değişimlerinden 3–5 gün önce) + 6 seans plazma değişimi + toplam IVIG 2 g/kg"],
-   ["IVIG uygulaması","İlk 5 plazma değişiminin her birinden sonra 0,1 g/kg; 6. değişimden sonra kalan 1,5 g/kg 3–4 günde"],
-   ["4. Profilaksi","Kontrendikasyon yoksa 3 ay PJP profilaksisi; CMV-DNA ve BKV-DNA yakın izlem"],
-   ["5. 1. ay DSA","Yanıt varsa DSA ve klinik izlem (artış, yeni DSA veya kötüleşmede daratumumab/rebiyopsi açısından yeniden değerlendirme). Yanıt yoksa daratumumab için endikasyon dışı başvuru"],
-   ["6. Daratumumab","16 mg/kg IV 2 haftada bir, 3 ay; 3. ay sonunda DSA ve rebiyopsi. Yanıt varsa 3 ay uzatma başvurusu; yoksa alternatif tedaviler"]
-  ],"Bölüm 11, Şekil 1"]
+  ["F",[
+   ["Biyopsi: aktivite ve kronisite","Ağır kronisitesi olan hasta tedavi edilmez."],
+   ["İdamenin güçlendirilmesi","Takrolimus (C0 ≥6 ng/ml) + tam doz mikofenolat (MMF 2 × 1.000 mg veya MPS 2 × 720 mg) + prednizolon."],
+   ["Tedavi","Rituksimab 375 mg/m² tek doz (plazma değişimlerinden 3–5 gün önce) + 6 seans plazma değişimi + toplam IVIG 2 g/kg. İlk 5 değişimin her birinden sonra 0,1 g/kg; 6. değişimden sonra kalan 1,5 g/kg 3–4 günde."],
+   ["Profilaksi ve izlem","Kontrendikasyon yoksa 3 ay PJP profilaksisi; CMV-DNA ve BKV-DNA yakın izlem."],
+   {q:"1. ayda DSA: yanıt var mı?",o:[["Evet","DSA ve klinik izlem. DSA artışı, yeni DSA veya kötüleşmede daratumumab ve/veya rebiyopsi açısından yeniden değerlendirme.","end"],["Hayır","Daratumumab için endikasyon dışı başvuru: 16 mg/kg IV, 2 haftada bir, 3 ay.",""]]},
+   {q:"3. ay sonunda DSA ve rebiyopsi: yanıt var mı?",o:[["Evet","3 ay daha tedavi için endikasyon dışı başvuru.","end"],["Hayır","Alternatif tedaviler açısından yeniden değerlendirme.","stop"]]}
+  ],"Bölüm 11, Şekil 1 (İ.Ü. İstanbul Tıp Fakültesi şeması)"]
  ]},
  {h:"Eve götürülecek mesajlar",src:"b11",items:[
   ["L",["Aktif ABMR tanısı: hasar + antikor-endotel etkileşimi (C4d veya g + ptc ≥2) + DSA.","İlk adım idame tedaviyi güçlendirmek: takrolimus ≥6 ng/ml, tam doz mikofenolat, prednizolon.","Standart: PF (5–6 seans) + IVIG 2 g/kg + rituksimab 375 mg/m².","Yanıtsızlıkta daratumumab; ekulizumab öncesi meningokok aşısı.","Ağır kronisitede tedavi verme."]]
@@ -1020,14 +1034,13 @@ const MODS_RAW=[
   ["T",["Grup","Risk faktörü"],[["Alıcı","Erkek cinsiyet, ileri yaş"],["İmmünsüpresyon","İdame steroid, rejeksiyon tedavisi öyküsü"],["Nakil/greft","ABO uyumsuzluğu, HLA uyumsuzluğu, gecikmiş greft fonksiyonu, iskemi-reperfüzyon"],["Ürolojik","Üreteral stent"],["İmmünogenetik","Bazı HLA-C alelleri"],["Viral/donör","Viral polimorfizm, HCV pozitif donör"]],"Bölüm 14, Tablo 1"]
  ]},
  {h:"İmmünsüpresyonun azaltılması",src:"b14",items:[
-  ["T",["Adım","Uygulama"],[
-   ["Hazırlık","Haftalık kreatinin, 1–2 haftada bir plazma PCR"],
-   ["1. basamak","Antimetabolit (MMF/MPS) %50 azaltılır"],
-   ["2. basamak","2–4 haftada viral yük gerilemezse antimetabolit kesilir"],
-   ["3. basamak","2 hafta sonra yanıt yoksa CNİ %25–50 azaltılır: takrolimus C0 4–6 ng/ml, siklosporin 60–100 ng/ml"],
-   ["Steroid","Prednizon 5–10 mg/gün sürdürülür"],
-   ["Sonlandırma","En az 1 hafta arayla iki ardışık negatif plazma PCR"],
-   ["Biyopsi","4–6 haftada düzelme yoksa veya kreatinin ≥%25 artarsa rejeksiyonu dışlamak için"]
+  ["F",[
+   ["Hazırlık","Plazma BKPyV-DNA düzeyi belirlenir; haftalık kreatinin ve 1–2 haftada bir plazma PCR."],
+   ["1. basamak","Antimetabolit (MMF/MPS) dozu %50 azaltılır."],
+   {q:"2–4 haftada viral yük geriledi mi?",o:[["Evet","Azaltılmış dozla izleme devam.","end"],["Hayır","2. basamak: antimetabolit kesilir.",""]]},
+   {q:"2 hafta sonra yanıt var mı?",o:[["Evet","Mevcut rejimle izlem.","end"],["Hayır","3. basamak: CNİ %25–50 azaltılır. Takrolimus C0 4–6 ng/ml, siklosporin 60–100 ng/ml. Prednizon 5–10 mg/gün sürdürülür.",""]]},
+   ["Sonlandırma","En az 1 hafta arayla iki ardışık negatif plazma PCR.","end"],
+   ["Biyopsi","4–6 haftada düzelme yoksa veya kreatinin ≥%25 artarsa rejeksiyonu dışlamak için allogreft biyopsisi.","stop"]
   ]],
   ["C","bkadim"],
   ["N","Takrolimus-mTORi-steroid kombinasyonu daha az BKPyVAN ile ilişkili bildirilmişse de aktif nefropatide rutin geçişi destekleyen kanıt yetersizdir."]
@@ -1125,11 +1138,11 @@ const MODS_RAW=[
   ["T",["İlaç","KV etkisi"],[["Takrolimus","Belirgin diyabetojenik (PTDM riski siklosporine göre ~1,86 kat)"],["Siklosporin","Dislipidemi, vazokonstriktif HT"],["mTOR inhibitörleri","Trigliserid ve kolesterol artışı"],["Steroid","Doza bağlı HT, hiperlipidemi, diyabet"],["Belatasept","Daha düşük KB, daha iyi lipid, daha az PTDM (EBV negatifte PTLD riski)"]],"Bölüm 18, Tablo 3"]
  ]},
  {h:"Nakil adayında KV tarama",src:"b18",items:[
-  ["T",["Adım","Karar"],[
-   ["1. Tüm adaylar","Öykü, muayene, istirahat EKG. ≥2 yıl diyaliz veya pulmoner HT riski varsa EKO"],
-   ["2. Semptom veya aktif kardiyak hastalık var mı?","Evet: kardiyoloji ve tedavi. Stabil KAH'ta rutin revaskülarizasyon önerilmez; invaziv yaklaşım AKS veya dirençli semptoma saklanır"],
-   ["3. Yüksek KAH riski (diyabet, bilinen KAH, düşük fonksiyonel kapasite) var mı?","Evet: stres EKO, miyokart perfüzyon sintigrafisi veya koroner BT anjiyografi. Pozitifse kardiyoloji; koroner anjiyografi yalnız yönetimi değiştirecekse. Hayır: ileri tetkik gerekmez"],
-   ["4. Sonuç","Nakil uygunluğunun bütüncül değerlendirmesi"]
+  ["F",[
+   ["Tüm adaylar","Öykü, fizik muayene, istirahat EKG. ≥2 yıl diyaliz veya pulmoner HT riski varsa EKO."],
+   {q:"Semptom veya aktif kardiyak hastalık var mı?",o:[["Evet","Kardiyoloji konsültasyonu ve tedavi. Stabil KAH'ta rutin revaskülarizasyon önerilmez; invaziv yaklaşım AKS veya dirençli semptoma saklanır.","stop"],["Hayır","Yüksek KAH riski açısından değerlendirilir.",""]]},
+   {q:"Yüksek KAH riski (diyabet, bilinen KAH, düşük fonksiyonel kapasite) var mı?",o:[["Evet","Non-invaziv test: stres EKO, miyokart perfüzyon sintigrafisi veya koroner BT anjiyografi. Pozitifse kardiyoloji; koroner anjiyografi yalnız yönetimi değiştirecekse.",""],["Hayır","Düşük risk: ileri kardiyak tetkik gerekmez.","end"]]},
+   ["Sonuç","Nakil uygunluğunun bütüncül değerlendirmesi.","end"]
   ],"Bölüm 18, Şekil 1 (KDIGO 2020, AHA 2022, ISCHEMIA-CKD)"],
   ["N","ISCHEMIA-CKD: ileri KBH ve nakil adaylarında stabil KAH için rutin anjiyografi veya preemptif revaskülarizasyon mortalite ve MI'yı azaltmamış, inme ve diyaliz başlama riskini artırmıştır."]
  ]},
@@ -1724,6 +1737,7 @@ function itemHTML(it){
   case "L":return `<ul class="lst">${it[1].map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
   case "T":return `<div class="tbl" tabindex="0" role="region" aria-label="Tablo"><table><thead><tr>${it[1].map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${it[2].map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${it[3]?`<p class="cap">${esc(it[3])}</p>`:""}`;
   case "HEAT":return heatHTML(null,null);
+  case "F":return RTEU.flowHTML(it[1],it[2],esc);
   case "C":return calcHTML(it[1]);
  }
  return "";
@@ -1738,16 +1752,22 @@ function navHTML(cur){
  return h;
 }
 const LEGEND="";
+function quickHTML(){
+ const nm=id=>{const m=MODS.find(x=>x.id===id);return m?m.nav:null};
+ const f=RTEU.favs().filter(nm),r=RTEU.recents().filter(id=>nm(id)&&!f.includes(id));
+ return `<section class="sec"><div class="sechead"><h2>Sık kullanılanlar</h2></div>${f.length?`<div class="rt-chips">${f.map(id=>`<button class="rt-chip fav" data-go="${id}">${nm(id)}</button>`).join("")}</div>`:`<p class="rt-empty">Bir konunun başlığındaki “☆ Sık kullanılanlara ekle” düğmesiyle konuları buraya sabitleyebilirsiniz.</p>`}${r.length?`<h3>Son açılanlar</h3><div class="rt-chips">${r.map(id=>`<button class="rt-chip" data-go="${id}">${nm(id)}</button>`).join("")}</div>`:""}</section>`;
+}
 function viewHome(){
  const grps=[...new Set(MODS.map(m=>m.grp))];
- return `<div><div class="eyebrow">Böbrek nakli · TND 2026</div><h1>Böbrek Nakli Rehberi</h1><p class="lede">Türk Nefroloji Derneği Transplantasyon Nefrolojisi Pratik Uygulama Önerileri (2. basım, 2026) temelinde ${MODS.length} konu, ${Object.keys(CALCS).length} klinik hesaplayıcı. Nakil öncesi değerlendirmeden uzun dönem izleme. İnternet bağlantısı olmadan çalışır.</p></div>
+ return `<div><div class="eyebrow">Böbrek nakli · TND 2026</div><h1>Böbrek Nakli Rehberi</h1><p class="lede">Türk Nefroloji Derneği Transplantasyon Nefrolojisi Pratik Uygulama Önerileri (2. basım, 2026) temelinde ${MODS.length} konu, ${Object.keys(CALCS).length} klinik hesaplayıcı. Nakil öncesi değerlendirmeden uzun dönem izleme. İnternet bağlantısı olmadan çalışır.</p>${RTEU.bylineHTML()}</div>
+ ${quickHTML()}
  ${grps.map(g=>`<section class="sec"><div class="sechead"><h2>${g}</h2></div><div class="grid">${MODS.filter(m=>m.grp===g).map(m=>`<button class="mod" data-go="${m.id}"><span class="yr">${SRC[m.secs[0].src]}</span><b>${m.nav}</b><span>${m.lede}</span></button>`).join("")}</div></section>`).join("")}
- <section class="sec"><div class="sechead"><h2>Sık kullanılanlar</h2></div>${calcHTML("takro")}${calcHTML("greft")}</section>
+ <section class="sec"><div class="sechead"><h2>Hızlı hesaplayıcılar</h2></div>${calcHTML("takro")}${calcHTML("greft")}</section>
  <button class="mod" data-go="hesap" style="width:100%"><span class="yr">${Object.keys(CALCS).length} araç</span><b>Tüm hesaplayıcılar</b><span>Takrolimus, ATG, valgansiklovir, Banff, desensitizasyon riski, BK, aşı uygunluğu, izlem takvimi ve diğerleri.</span></button>
  <p class="disclaimer">Bu uygulama klinik karar desteği amaçlıdır; hasta özelinde klinik değerlendirmenin, merkez protokollerinin ve ürün bilgilerinin yerini tutmaz. Dozlar erişkin içindir.</p>`;
 }
 function viewMod(m){
- return `<div><div class="eyebrow"><span>${m.grp}</span>${[...new Set(m.secs.map(s=>s.src))].map(s=>`<span class="src">${SRC[s]}</span>`).join("")}</div><h1>${m.title}</h1><p class="lede">${m.lede}</p></div>
+ return `<div><div class="eyebrow"><span>${m.grp}</span>${[...new Set(m.secs.map(s=>s.src))].map(s=>`<span class="src">${SRC[s]}</span>`).join("")}</div><h1>${m.title}</h1><p class="lede">${m.lede}</p>${RTEU.starHTML(m.id)}</div>
  <div class="toc">${m.secs.map((s,i)=>`<button data-sec="s${i}">${s.h}</button>`).join("")}</div>
  ${m.secs.map((s,i)=>`<section class="sec" id="s${i}"><div class="sechead"><h2>${s.h}</h2><span class="src">${SRC[s.src]}</span></div>${s.items.map(itemHTML).join("")}</section>`).join("")}
  <p class="disclaimer">İçerik TND Transplantasyon Nefrolojisi Pratik Uygulama Önerileri (2026) ilgili bölümünden özetlenmiştir. "Konunun önemi" ve "Eve götürülecek mesajlar" bölüm içeriğinin derlemesidir.</p>`;
@@ -1758,6 +1778,7 @@ function viewCalc(){
 function viewSrc(){
  return `<div><div class="eyebrow">Bilgi</div><h1>Kaynak ve Yöntem</h1><p class="lede">Akademik içerik NotebookLM'deki “Transplantasyon Nefrolojisi Pratik Rehberi” defterindeki tek kaynaktan çıkarılmıştır.</p></div>
  <div class="tbl" tabindex="0" role="region" aria-label="Tablo"><table><tbody>
+ <tr><td>Hazırlayan</td><td>Prof. Dr. Ekrem KARA. Recep Tayyip Erdoğan Üniversitesi Tıp Fakültesi, İç Hastalıkları Anabilim Dalı, Nefroloji Bilim Dalı, Rize.</td></tr>
  <tr><td>Kaynak</td><td>Türk Nefroloji Derneği. Transplantasyon Nefrolojisi Pratik Uygulama Önerileri. Genişletilmiş 2. basım. Editör: Prof. Dr. Aydın Türkmen. İstanbul: TND; 2026. ISBN 978-625-6726-17-8.</td></tr>
  <tr><td>Kapsam</td><td>29 bölüm: mevzuat, alıcı ve verici değerlendirmesi, cerrahi, immünoloji, desensitizasyon, erken dönem sıvı ve immünsüpresyon, medikal ve cerrahi komplikasyonlar, TCMR, ABMR, Banff, enfeksiyonlar (profilaksi, CMV, BK, TB, mantar), KV, metabolik, kemik, hematoloji, malignite, gebelik, genetik hastalıklar, greft yetmezliği, poliklinik izlemi, beslenme, yapay zekâ.</td></tr>
  <tr><td>Bölüm standardı</td><td>Hiperkalemide %10 kalsiyum glukonat 30 ml; ağır semptomatik hiponatremide %3 NaCl 150 ml bolus; ideal vücut ağırlığı Devine formülü (RTEÜ Nefroloji).</td></tr>
@@ -1773,7 +1794,7 @@ function viewSrc(){
  <p class="disclaimer">Klinik karar desteği amaçlıdır. Hasta özelinde klinik değerlendirmenin, merkez protokollerinin ve ürün bilgilerinin yerini tutmaz.</p>`;
 }
 /* Arama */
-function flatten(){const out=[];MODS.forEach(m=>m.secs.forEach((s,si)=>s.items.forEach(it=>{let t="",no="";if(["R","DR"].includes(it[0])){no=it[1];t=it[3]}else if(["P","NG","DP"].includes(it[0])){no=it[1];t=it[2]}else if(["X","N","W","H"].includes(it[0]))t=it[1];else if(it[0]==="L")t=it[1].join(" ");else if(it[0]==="T")t=it[2].map(r=>r.join(" ")).join(" · ");else if(it[0]==="C"){t=CALCS[it[1]].t+" hesaplayıcı"}if(t)out.push({m,si,s,no,t,k:it[0]})})));return out}
+function flatten(){const out=[];MODS.forEach(m=>m.secs.forEach((s,si)=>s.items.forEach(it=>{let t="",no="";if(["R","DR"].includes(it[0])){no=it[1];t=it[3]}else if(["P","NG","DP"].includes(it[0])){no=it[1];t=it[2]}else if(["X","N","W","H"].includes(it[0]))t=it[1];else if(it[0]==="L")t=it[1].join(" ");else if(it[0]==="T")t=it[2].map(r=>r.join(" ")).join(" · ");else if(it[0]==="F"){t=it[1].map(x=>typeof x==="string"?x:x.q!==undefined?x.q+" "+x.o.map(o=>o.join(" ")).join(" "):x.join(" ")).join(" · ")}else if(it[0]==="C"){t=CALCS[it[1]].t+" hesaplayıcı"}if(t)out.push({m,si,s,no,t,k:it[0]})})));return out}
 let FLAT=null;
 const fold=s=>s.toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ı/g,"i");
 function viewSearch(q){
@@ -1789,12 +1810,14 @@ function go(id,sec,push=true){
  const v=$("#view");current=id;let html;
  const m=MODS.find(x=>x.id===id);
  if(id==="hesap")html=viewCalc();else if(id==="kaynak")html=viewSrc();else if(m)html=viewMod(m);else{current="home";html=viewHome()}
+ if(m)RTEU.visit(id);
  v.innerHTML=html;bindCalcs(v);$("#navlist").innerHTML=navHTML(current);
  if(push){try{history.replaceState(null,"",current==="home"?location.pathname+location.search:"#"+current)}catch(e){}}
  $("#side").classList.remove("open");
  if(sec){const t=document.getElementById(sec);if(t)setTimeout(()=>t.scrollIntoView({block:"start"}),0)}else window.scrollTo(0,0);
 }
 document.addEventListener("click",e=>{
+ const st=e.target.closest("[data-rt-star]");if(st){const on=RTEU.toggleFav(st.dataset.rtStar);st.setAttribute("aria-pressed",on);st.textContent=on?"★ Sık kullanılanlarda":"☆ Sık kullanılanlara ekle";return}
  const b=e.target.closest("[data-go],[data-sec]");if(!b)return;
  if(b.dataset.go){$("#q").value="";go(b.dataset.go,b.dataset.sec)}
  else if(b.dataset.sec){const t=document.getElementById(b.dataset.sec);if(t)t.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
@@ -1808,6 +1831,7 @@ function applyTheme(t){if(t==="system")document.documentElement.removeAttribute(
 let theme="system";try{theme=localStorage.getItem("nakil-theme")||"system"}catch(e){}
 applyTheme(theme);
 $("#themeBtn").addEventListener("click",()=>{theme=THEMES[(THEMES.indexOf(theme)+1)%3];applyTheme(theme);try{localStorage.setItem("nakil-theme",theme)}catch(e){}});
+RTEU.init({key:"nakil",version:"1.1",date:"11.11.2026",tools:".sidefoot",view:"#view"});
 /* Başlat */
 const h0=(location.hash||"").replace("#","");go(h0||"home",null,false);
 /* Çevrimdışı: GitHub Pages gibi bir sunucuda service worker kaydı; artifact çerçevesinde sessizce atlanır */
